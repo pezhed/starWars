@@ -1,16 +1,21 @@
 import React from 'react';
 import Card from './Card';
+import "./cardlist.css";
 
+const CardList = ({ data }) => {
 
-const CardList = ({ heroes }) => {
+  data = Array.from(data);
+  console.log(data.type);
   return (
-    <div>
+
+    <div class="cardList-container">
     {
-      heroes.map((user, i) => {
+
+      data.map((user, i) => {
         return (
           <Card
             key={i}
-            name = {heroes[i].name}
+            name = {data[i].name}
           />
         );
       })

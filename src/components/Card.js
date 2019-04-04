@@ -1,9 +1,10 @@
 import React from 'react'
+import './card.css';
 
 const Card = ({name}) => {
   return (
-    <div>
-      <img alt='heroes' src={`./images/${name}.jpeg`} />
+    <div class='card-container'>
+      <img alt='heroes' src={require(`../images/${name}.jpeg`)} height="239" width="240"/>
       <div>
       <h2>{name}</h2>
       </div>

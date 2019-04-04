@@ -3,30 +3,29 @@ import CardList from '../components/CardList';
 
 
 class App extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props);
+
     this.state = {
-        heroes: []
-    }
+        data: []
+    };
+    console.log("in constructor: ");
   }
 
   componentDidMount(){
     fetch('https://swapi.co/api/people/')
     .then(response => response.json())
-    .then(people => this.setState({ heroes: people }, function(){
-      console.log(this.state.heroes);
-    }));
+    .then(respJson => this.setState({ data: respJson.results }))
   }
 
   render() {
-
-    console.log("length is: " + this.state.heroes.results);
-    return !this.state.heroes.results ?
+    console.log(this.state.data.length);
+    return !this.state.data.length ?
       <h1>Loading</h1> :
       (
         <div>
           <h1>Wanted</h1>
-              <CardList heroes={this.state.heroes}/>
+              <CardList data={this.state.data}/>
         </div>
       );
   }
