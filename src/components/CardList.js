@@ -16,6 +16,7 @@ const CardList = ({ data }) => {
           <Card
             key={i}
             name = {data[i].name}
+            species = {data[i].species}
           />
         );
       })

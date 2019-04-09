@@ -7,6 +7,7 @@ const Card = ({name}) => {
       <img alt='heroes' src={require(`../images/${name}.jpeg`)} height="239" width="240"/>
       <div>
       <h2>{name}</h2>
+
       </div>
     </div>
   )
